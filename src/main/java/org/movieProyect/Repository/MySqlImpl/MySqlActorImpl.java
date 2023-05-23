@@ -5,6 +5,7 @@ import org.movieProyect.ModelDAO.ActorDAO;
 import org.movieProyect.Repository.interfaces.IActorDao;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,12 +120,16 @@ public class MySqlActorImpl implements IActorDao {
         ActorDAO updatedActor;
         conector.openConection();
 
-        conector.executeUpdate("UPDATE actor SET " +
-                "name = " + actor.getName() +
-                "lastName = " + actor.getLastName() +
-                "born = " + actor.getBorn() +
-                "country = " + actor.getCountry()
-                + "WHERE idActor = " + actor.getIdActor());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = dateFormat.format(actor.getBorn());
+
+        String query = "UPDATE actor SET " +
+                "name = '" + actor.getName() + "', " +
+                "lastName = '" + actor.getLastName() + "', " +
+                "country = '" + actor.getCountry() + "' " +
+                "WHERE idActor = " + actor.getIdActor();
+
+        conector.executeUpdate(query);
 
         updatedActor = getActor(actor.getIdActor());
 

@@ -121,12 +121,13 @@ public class MySqlMovieImpl implements IMovieDao {
         MovieDAO updatedMovie;
         conector.openConection();
 
-        conector.executeUpdate("UPDATE actor SET " +
-                "title = " + movie.getTitle() +
-                "release = " + movie.getRelease() +
-                "runningTime = " + movie.getRunningTime() +
-                "resume = " + movie.getResume()
-                + "WHERE idActor = " + movie.getIdMovie());
+        String query ="UPDATE movie SET " +
+                "tittle = '" + movie.getTitle() + "', " +
+                "runningTime = '" + movie.getRunningTime() + "', " +
+                "resume = '" + movie.getResume() + "' " +
+                "WHERE idMovie = " + movie.getIdMovie();
+
+        conector.executeUpdate(query);
 
         updatedMovie = getMovie(movie.getIdMovie());
 

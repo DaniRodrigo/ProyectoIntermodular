@@ -33,7 +33,7 @@ public class MovieEntityToDAO {
      */
 
     public static String movieStringBuilder(MovieDAO movie) { // %2d se usa para reemplazar enteros y %s para reemplazar strings
-        return String.format("id: %2d, title: %s, release: %s, running time: %s, resume: %s",
+        return String.format("\nid: %2d,\n title: %s,\n release: %s,\n running time: %s,\n resume: %s\n",
                 movie.getIdMovie(),
                 movie.getTitle(),
                 movie.getRelease(),

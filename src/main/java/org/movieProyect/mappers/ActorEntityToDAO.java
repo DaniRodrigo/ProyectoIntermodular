@@ -30,7 +30,7 @@ public class ActorEntityToDAO {
      * Metodo StringBuilder, otra forma de hacer un toString
      */
     public static String actorStringBuilder(ActorDAO actor) { // %2d se usa para reemplazar enteros y %s para reemplazar strings
-        return String.format("id: %2d, name: %s, last name: %s, born: %s, country: %s",
+        return String.format("\n id: %2d,\n name: %s,\n last name: %s,\n born: %s,\n country: %s\n",
                 actor.getIdActor(),
                 actor.getName(),
                 actor.getLastName(),

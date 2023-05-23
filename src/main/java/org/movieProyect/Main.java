@@ -9,6 +9,8 @@ import org.movieProyect.Repository.MySqlImpl.MySqlActorImpl;
 import org.movieProyect.Repository.interfaces.IMovieCastDao;
 import org.movieProyect.Repository.interfaces.IMovieDao;
 import org.movieProyect.utils.DateUtils;
+import org.movieProyect.view.Menu;
+
 import java.sql.SQLException;
 import java.util.List;
 import static org.movieProyect.mappers.ActorEntityToDAO.actorStringBuilder;
@@ -17,7 +19,10 @@ import static org.movieProyect.mappers.MovieEntityToDAO.movieStringBuilder;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-        //Creacion de objetos para la realizacion de metodos:
+        Menu menu = new Menu();
+        menu.menuPrincipal();
+
+      /*  //Creacion de objetos para la realizacion de metodos:
 
         IActorDao actorDaoImp = new MySqlActorImpl();
 
@@ -99,8 +104,10 @@ public class Main {
             });
             System.out.println();
         });
-
+*/
 
 
     }
+
+
 }

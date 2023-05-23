@@ -63,7 +63,7 @@ public class MySQLConector {
             Statement sentencia = con.createStatement();
             return sentencia.executeUpdate(sql) <= 0 ? false : true;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
         }
     }
 
